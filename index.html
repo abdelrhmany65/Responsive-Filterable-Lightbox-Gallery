@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+    <title>Document</title>
+</head>
+<body>
+
+ <!-- ...........................  -->
+<div class="box">
+    <ul class="controls">
+        <li class="button" data-filter="all">all</li>
+        <li class="button" data-filter="Healthy">Healthy</li>
+        <li class="button" data-filter="Pizza">Pizza</li>
+        <li class="button" data-filter="fruit">fruit</li>
+        <li class="button" data-filter="delicious">delicious</li>
+
+    </ul>
+    <div class="images">
+    <a href="image/Healthy-1.jpg" class="image Healthy">
+        <img src="image/Healthy-1.jpg" alt="image">
+    </a>
+    <a href="image/Healthy-2.jpg" class="image Healthy">
+        <img src="image/Healthy-2.jpg" alt="image">
+    </a>
+    <a href="image/Healthy-3.jpg" class="image Healthy">
+        <img src="imaegae/Healthy-3.jpg" alt="image">
+    </a>
+    <a href="image/Healthy-4.jpg" class="image Healthy">
+        <img src="iaemgae/Healthy-4.jpg" alt="image">
+    </a>
+    <a href="image/Healthy-5.jpg" class="image Healthy">
+        <img src="img/Healthy-5.jpg" alt="image">
+    </a>
+    <!-- /Healthy -->
+    <!-- Pizza -->
+    <a href="image/Pizza-1.jpg" class="image Pizza">
+        <img src="img/Pizza-1.jpg" alt="image">
+    </a>
+    <a href="image/Pizza-2.jpg" class="image Pizza">
+        <img src="img/Pizza-2.jpg" alt="image">
+    </a>
+    <a href="image/Pizza-3.jpg" class="image Pizza">
+        <img src="iaemgae/Pizza-3.jpg" alt="image">
+    </a>
+    <!-- /Pizza -->
+    <!-- fruit -->
+    <a href="image/fruit-1.jpg" class="image fruit">
+        <img src="image/fruit-1.jpg" alt="image">
+    </a>
+    <a href="image/fruit-2.jpg" class="image fruit">
+        <img src="imaegae/fruit-2.jpg" alt="image">
+    </a>
+    <a href="image/fruit-3.jpg" class="image fruit">
+        <img src="imaegae/fruit-3.jpg" alt="image">
+    </a>
+    <!-- /fruit -->
+    <!-- delicious -->
+    <a href="image/delicious-1.jpg" class="image delicious">
+        <img src="imaegae/delicious-1.jpg" alt="image">
+    </a>
+    <a href="image/delicious-2.jpg" class="image delicious">
+        <img src="image/delicious-2.jpg" alt="image">
+    </a>
+    <a href="image/delicious-3.jpg" class="image delicious">
+        <img src="iaemgae/delicious-3.jpg" alt="image">
+    </a>
+    <a href="image/delicious-4.jpg" class="image delicious">
+        <img src="iaemgae/delicious-4.jpg" alt="image">
+    </a>
+    <a href="image/delicious-5.jpg" class="image delicious">
+        <img src="iaemgae/delicious-5.jpg" alt="image">
+    </a>
+
+    <!-- /delicious -->
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.button').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        var filter = $(this).attr('data-filter')
+
+        if(filter == 'all'){
+            $('.image').show(400);
+        }else{
+            $('.image').not('.'+filter).hide(200);
+            $('.image').filter('.'+filter).show(400);
+        }
+
+    });
+
+    $('.box').magnificPopup({
+
+        delegate:'a',
+        type:'image',
+        box:{
+            enabled:true
+        }
+
+    });
+
+});
+
+</script>
+    
+</body>
+</html>
